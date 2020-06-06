@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="XF1003.MainPage">
+
+    <StackLayout>
+        <Entry 
+            x:Name="entry"
+            Placeholder="請輸入你的姓名"/>
+        <Button
+            Clicked="Button_Clicked"
+            Text="OK"/>
+        <Label
+            x:Name="lable"
+            Text="你好"
+            TextColor="Pink"
+            FontSize="30"/>
+    </StackLayout>
+
+</ContentPage>
