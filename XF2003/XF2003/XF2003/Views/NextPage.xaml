@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="http://prismlibrary.com"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             x:Class="XF2003.Views.NextPage"
+             Title="下一頁"
+             BackgroundColor="LightYellow"
+             NavigationPage.HasBackButton="False"
+             >
+
+    <Grid>
+    <Button 
+        Command="{Binding GoBackCommand}"
+        VerticalOptions="End"
+        Text="返回"/>
+        
+    </Grid>
+
+</ContentPage>
