@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XF1012.Views.MainPage"
+             Title="{Binding Title}">
+
+    <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+        <Label Text="Welcome to Xamarin Forms and Prism!" />
+        <Entry Placeholder="數值1"
+               Text="{Binding Value1}"
+               PlaceholderColor="LightBlue"/>
+        <Entry Placeholder="數值2"
+               Text="{Binding Value2}"
+               PlaceholderColor="LightBlue"/>
+        <Entry Text="{Binding Seconds}"
+            Placeholder="停留秒數"
+               PlaceholderColor="LightBlue"/>
+        <Label Text="{Binding Sum}"
+               FontSize="30" FontAttributes="Bold"/>
+        <Button Command="{Binding SumCommand}"
+                Text="加總計算"/>
+        <Button Text="取消"/>
+        <ActivityIndicator
+            IsRunning="{Binding IsRunning}"
+            WidthRequest="100" HeightRequest="100"/>
+    </StackLayout>
+
+</ContentPage>
