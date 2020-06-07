@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:behavior="http://prismlibrary.com" 
+             x:Class="XF2014.Views.MainPage"
+             Title="Event 事件 To Command 命令">
+
+    <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+        <Label Text="Welcome to Xamarin Forms and Prism!" />
+        <Image
+            Source="https://docs.microsoft.com/zh-tw/xamarin/android/platform/binding-java-library/binding-an-aar-images/00-monkey-sml.png">
+            <Image.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding BtnClickedCommand}"/>
+            </Image.GestureRecognizers>
+        </Image>
+        
+        <Button Text="請按下我" >
+            <Button.Behaviors>
+                <behavior:EventToCommandBehavior
+                    EventName="Clicked"
+                    Command="{Binding BtnClickedCommand}"/>
+            </Button.Behaviors>
+        </Button>
+        <WebView
+            HeightRequest="300"
+            Source="https://forums.xamarin.com/discussion/125418/how-to-request-for-camera-permission-on-xamarin-forms-ios"
+                 />
+    </StackLayout>
+
+</ContentPage>
