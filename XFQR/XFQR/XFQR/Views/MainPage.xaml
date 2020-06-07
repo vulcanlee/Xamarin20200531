@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XFQR.Views.MainPage"
+             Title="{Binding Title}">
+
+    <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+        <Label Text="Welcome to Xamarin Forms and Prism!" />
+        <Label Text="條碼類型"/>
+        <Label Text="{Binding QRType}"/>
+        <Label Text="條碼內容"/>
+        <Label Text="{Binding QRContent}"/>
+        <Button Text="開始掃描" Command="{Binding ScanCommand}"/>
+    </StackLayout>
+
+</ContentPage>
