@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XF2012.Views.MainPage"
+             Title="對話窗練習">
+
+    <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+        <Label Text="Welcome to Xamarin Forms and Prism!" />
+        <Label Text="{Binding YourChoice}"/>
+        <Button Text="請選擇要吃的水果" Command="{Binding EatCommand}"/>
+    </StackLayout>
+
+</ContentPage>
