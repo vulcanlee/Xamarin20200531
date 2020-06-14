@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="xf3027.Views.MainPage"
+             Title="{Binding Title}"
+             NavigationPage.HasNavigationBar="True">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="更新"/>
+        <ToolbarItem Text="Info1"/>
+        <ToolbarItem Text="Info2" Order="Secondary"/>
+        <ToolbarItem Text="Info3" Order="Secondary"/>
+        <ToolbarItem Text="Info4" Order="Secondary"/>
+        <ToolbarItem Text="Info5" Order="Secondary"/>
+        <ToolbarItem Text="Info6" Order="Secondary"/>
+        <ToolbarItem Text="Info7" Order="Secondary"/>
+        <ToolbarItem Text="Info8" Order="Secondary"/>
+    </ContentPage.ToolbarItems>
+
+    <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+        <Label Text="Welcome to Xamarin Forms and Prism!" />
+    </StackLayout>
+
+</ContentPage>
