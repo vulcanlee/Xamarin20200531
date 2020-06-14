@@ -4,6 +4,17 @@
              x:Class="xf399.Views.MainPage"
              Title="{Binding Title}">
 
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="新增">
+            <ToolbarItem.IconImageSource>
+                <FontImageSource
+                    Glyph="&#xF0756;"
+                    FontFamily="FontAwesome"
+                    Size="30" Color="White"/>
+            </ToolbarItem.IconImageSource>
+        </ToolbarItem>
+    </ContentPage.ToolbarItems>
+    
     <StackLayout 
         Margin="40,0"
         HorizontalOptions="Fill" VerticalOptions="CenterAndExpand">
