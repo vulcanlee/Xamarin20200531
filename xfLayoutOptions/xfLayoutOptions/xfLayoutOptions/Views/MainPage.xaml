@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="xfLayoutOptions.Views.MainPage"
+             Title="{Binding Title}">
+
+    <StackLayout
+        Margin="15"
+        BackgroundColor="Yellow"
+        VerticalOptions="Start"
+        Orientation="Horizontal">
+        <Label Text="文字" WidthRequest="70" FontSize="24" />
+        <Entry HorizontalOptions="FillAndExpand"/>
+    </StackLayout>
+
+</ContentPage>
