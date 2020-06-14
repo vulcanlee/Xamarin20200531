@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms"
+                  xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                  xmlns:prism="http://prismlibrary.com"
+                  prism:ViewModelLocator.AutowireViewModel="True"
+                  x:Class="xf3006.Views.MDPage">
+
+    <MasterDetailPage.Master>
+        <ContentPage Title="Menu"
+                     BackgroundColor="LightGreen">
+            <StackLayout Padding="20">
+                <Label Text="元智大學"
+                       HorizontalOptions="Center"
+                       TextColor="DarkBlue"
+                       FontSize="36"
+                       Margin="0,0,0,30"/>
+                <!-- TODO: // Update the Layout and add some real menu items  -->
+                <Button Text="Home" Command="{Binding GoHomeCommand}"/>
+                <Button Text="P1" Command="{Binding GoPage1Command}" />
+                <Button Text="P2" Command="{Binding GoPage2Command}" />
+            </StackLayout>
+        </ContentPage>
+    </MasterDetailPage.Master>
+    
+</MasterDetailPage>

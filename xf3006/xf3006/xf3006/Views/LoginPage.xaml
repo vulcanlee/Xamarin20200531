@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="http://prismlibrary.com"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             x:Class="xf3006.Views.LoginPage"
+             BackgroundColor="DarkGreen">
+
+    <StackLayout
+        Margin="30,0"
+        VerticalOptions="Center">
+        <Label Text="元智學生驗證" TextColor="White"
+               FontSize="36" HorizontalOptions="Center"
+               Margin="0,0,0,50"/>
+        <Label Text="帳號" TextColor="White"/>
+        <Entry Text="{Binding Account}" TextColor="White"/>
+        <Label Text="密碼" TextColor="White"/>
+        <Entry Text="{Binding Password}" TextColor="White" IsPassword="True"/>
+        <Button Text="登入" Margin="0,40"
+                Command="{Binding LoginCommand}"/>
+        <Label Text="帳號密碼錯誤" TextColor="Pink" FontSize="20"
+               IsVisible="{Binding ShowErrorMessage}"/>
+    </StackLayout>
+  
+</ContentPage>
