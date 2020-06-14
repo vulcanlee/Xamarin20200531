@@ -32,5 +32,22 @@
                VerticalOptions="Center" FontSize="32" 
                TextColor="White"
                HorizontalTextAlignment="Center"/>
+
+        <Button Text="大"
+                Grid.Row="2" Grid.Column="0"/>
+        <Button Text="小"
+                Grid.Row="2" Grid.Column="1"/>
+
+        <BoxView Color="Red"
+                 Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2"
+                 />
+        <Label Text="ColumnSpan=2&#x0a;Row=3&#x0a;Column=0"
+               Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2"
+               HorizontalOptions="Center"
+               VerticalOptions="Center" FontSize="60" 
+               TextColor="White"
+               HorizontalTextAlignment="Center"/>
+
+
     </Grid>
 </ContentPage>
