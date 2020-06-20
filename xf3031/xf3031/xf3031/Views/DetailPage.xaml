@@ -7,8 +7,35 @@
              Title="工作明細">
 
     <Grid>
-        <Label Text="{Binding MyTaskSelectedItem.MyTaskName}"
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="60"/>
+        </Grid.RowDefinitions>
+        <StackLayout
+            Margin="15" 
+            >
+            <Label Text="工作名稱"/>
+            <Entry Text="{Binding MyTaskSelectedItem.MyTaskName}"
                FontSize="22"/>
+            <Label Text="狀態"/>
+            <Entry Text="{Binding MyTaskSelectedItem.MyTaskStatus}"
+               FontSize="22"/>
+            <Label Text="時間"/>
+            <DatePicker Date="{Binding  MyTaskSelectedItem.MyTaskDate}"/>
+        </StackLayout>
+
+        <Grid
+            Grid.Row="1"
+            >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="100"/>
+            </Grid.ColumnDefinitions>
+            <Button Text="儲存" BackgroundColor="LightGreen"/>
+            <Button Text="刪除" Grid.Column="1"
+                    BackgroundColor="Red"
+                    TextColor="White"/>
+        </Grid>
     </Grid>
   
 </ContentPage>

@@ -22,14 +22,27 @@ namespace xf3031.ViewModels
             new ObservableCollection<MyTaskItem>();
         public MyTaskItem MyTaskSelectedItem { get; set; }
         public DelegateCommand ItemSelectedCommand { get; set; }
+        public DelegateCommand RefreshCommand { get; set; }
+        public bool IsRefreshing { get; set; }
         public MainPageViewModel(INavigationService navigationService)
         {
             this.navigationService = navigationService;
             ItemSelectedCommand = new DelegateCommand(() =>
             {
                 NavigationParameters para = new NavigationParameters();
-                para.Add("MyTaskSelectedItem", MyTaskSelectedItem);
+                para.Add("MyTaskSelectedItem", MyTaskSelectedItem.Clone());
                 navigationService.NavigateAsync("DetailPage", para);
+            });
+            RefreshCommand = new DelegateCommand(() =>
+            {
+                IsRefreshing = true;
+                MyTaskRepository repository = new MyTaskRepository();
+                var tasks = repository.GetMyTask();
+                foreach (var item in tasks)
+                {
+                    MyTaskItemList.Add(item);
+                }
+                IsRefreshing = false;
             });
         }
 
@@ -39,11 +52,14 @@ namespace xf3031.ViewModels
 
         public void OnNavigatedTo(INavigationParameters parameters)
         {
-            MyTaskRepository repository = new MyTaskRepository();
-            var tasks = repository.GetMyTask();
-            foreach (var item in tasks)
+            if (parameters.GetNavigationMode() == NavigationMode.New)
             {
-                MyTaskItemList.Add(item);
+                MyTaskRepository repository = new MyTaskRepository();
+                var tasks = repository.GetMyTask();
+                foreach (var item in tasks)
+                {
+                    MyTaskItemList.Add(item);
+                }
             }
         }
 
