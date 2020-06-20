@@ -16,10 +16,29 @@ namespace xf3031.ViewModels
 
         private readonly INavigationService navigationService;
         public MyTaskItem MyTaskSelectedItem { get; set; }
+        public DelegateCommand SaveCommand { get; set; }
+        public DelegateCommand DeleteCommand { get; set; }
         public DetailPageViewModel(INavigationService navigationService)
         {
             this.navigationService = navigationService;
+            SaveCommand = new DelegateCommand(OnSaveCommand);
+            DeleteCommand = new DelegateCommand(OnDeleteCommand);
+        }
 
+        private void OnDeleteCommand()
+        {
+            NavigationParameters para = new NavigationParameters();
+            para.Add("MyTaskSelectedItem", MyTaskSelectedItem);
+            para.Add("Mode", "刪除");
+            navigationService.GoBackAsync(para);
+        }
+
+        private void OnSaveCommand()
+        {
+            NavigationParameters para = new NavigationParameters();
+            para.Add("MyTaskSelectedItem", MyTaskSelectedItem);
+            para.Add("Mode", "修改");
+            navigationService.GoBackAsync(para);
         }
 
         public void OnNavigatedFrom(INavigationParameters parameters)

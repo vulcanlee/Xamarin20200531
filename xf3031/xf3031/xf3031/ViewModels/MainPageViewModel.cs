@@ -61,6 +61,36 @@ namespace xf3031.ViewModels
                     MyTaskItemList.Add(item);
                 }
             }
+            else
+            {
+                if (parameters.ContainsKey("Mode"))
+                {
+                    var Mode = parameters.GetValue<string>("Mode");
+                    MyTaskItem item = parameters
+                        .GetValue<MyTaskItem>("MyTaskSelectedItem");
+                    if (Mode == "修改")
+                    {
+                        MyTaskItem UpdateRecore =
+                            MyTaskItemList
+                            .FirstOrDefault(x => x.MyTaskName == item.MyTaskName);
+                        if (UpdateRecore != null)
+                        {
+                            UpdateRecore.MyTaskDate = item.MyTaskDate;
+                            UpdateRecore.MyTaskStatus = item.MyTaskStatus;
+                        }
+                    }
+                    if (Mode == "刪除")
+                    {
+                        MyTaskItem DeleteRecore =
+                            MyTaskItemList
+                            .FirstOrDefault(x => x.MyTaskName == item.MyTaskName);
+                        if (DeleteRecore != null)
+                        {
+                            MyTaskItemList.Remove(DeleteRecore);
+                        }
+                    }
+                }
+            }
         }
 
         public void OnNavigatingTo(INavigationParameters parameters)

@@ -16,7 +16,7 @@
             >
             <ListView.Behaviors>
                 <prism:EventToCommandBehavior
-                    EventName="ItemSelected"
+                    EventName="ItemTapped"
                     Command="{Binding ItemSelectedCommand}"/>
             </ListView.Behaviors>
             <ListView.ItemTemplate>

@@ -31,8 +31,10 @@
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="100"/>
             </Grid.ColumnDefinitions>
-            <Button Text="儲存" BackgroundColor="LightGreen"/>
+            <Button Text="儲存" BackgroundColor="LightGreen"
+                    Command="{Binding SaveCommand}"/>
             <Button Text="刪除" Grid.Column="1"
+                    Command="{Binding DeleteCommand}"
                     BackgroundColor="Red"
                     TextColor="White"/>
         </Grid>
