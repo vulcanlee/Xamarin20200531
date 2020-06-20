@@ -18,11 +18,29 @@ namespace xf3031.ViewModels
         public MyTaskItem MyTaskSelectedItem { get; set; }
         public DelegateCommand SaveCommand { get; set; }
         public DelegateCommand DeleteCommand { get; set; }
+        public DelegateCommand AddSaveCommand { get; set; }
+        public bool ShowEditMode { get; set; } = true;
+        public bool ShowAddMode
+        {
+            get
+            {
+                return !ShowEditMode;
+            }
+        }
         public DetailPageViewModel(INavigationService navigationService)
         {
             this.navigationService = navigationService;
             SaveCommand = new DelegateCommand(OnSaveCommand);
             DeleteCommand = new DelegateCommand(OnDeleteCommand);
+            AddSaveCommand = new DelegateCommand(OnAddSaveCommand);
+        }
+
+        private void OnAddSaveCommand()
+        {
+            NavigationParameters para = new NavigationParameters();
+            para.Add("MyTaskSelectedItem", MyTaskSelectedItem);
+            para.Add("Mode", "新增");
+            navigationService.GoBackAsync(para);
         }
 
         private void OnDeleteCommand()
@@ -49,6 +67,14 @@ namespace xf3031.ViewModels
         {
             MyTaskSelectedItem = parameters
                 .GetValue<MyTaskItem>("MyTaskSelectedItem");
+            if(MyTaskSelectedItem.MyTaskName =="")
+            {
+                ShowEditMode = false;
+            }
+            else
+            {
+                ShowEditMode = true;
+            }
         }
 
         public void OnNavigatingTo(INavigationParameters parameters)

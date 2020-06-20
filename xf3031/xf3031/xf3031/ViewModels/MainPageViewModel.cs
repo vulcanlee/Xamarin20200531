@@ -24,6 +24,8 @@ namespace xf3031.ViewModels
         public DelegateCommand ItemSelectedCommand { get; set; }
         public DelegateCommand RefreshCommand { get; set; }
         public bool IsRefreshing { get; set; }
+        public DelegateCommand AddCommand { get; set; }
+
         public MainPageViewModel(INavigationService navigationService)
         {
             this.navigationService = navigationService;
@@ -44,6 +46,18 @@ namespace xf3031.ViewModels
                 }
                 IsRefreshing = false;
             });
+            AddCommand = new DelegateCommand(OnAddCommand);
+        }
+
+        private void OnAddCommand()
+        {
+            MyTaskItem item = new MyTaskItem();
+            item.MyTaskName = "";
+            item.MyTaskStatus = "請記得更新狀態";
+            item.MyTaskDate = DateTime.Now.AddDays(7);
+            NavigationParameters para = new NavigationParameters();
+            para.Add("MyTaskSelectedItem", item);
+            navigationService.NavigateAsync("DetailPage", para);
         }
 
         public void OnNavigatedFrom(INavigationParameters parameters)
@@ -88,6 +102,10 @@ namespace xf3031.ViewModels
                         {
                             MyTaskItemList.Remove(DeleteRecore);
                         }
+                    }
+                    if (Mode == "新增")
+                    {
+                        MyTaskItemList.Insert(0, item);
                     }
                 }
             }

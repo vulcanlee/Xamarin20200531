@@ -26,6 +26,7 @@
 
         <Grid
             Grid.Row="1"
+            IsVisible="{Binding ShowEditMode}"
             >
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
@@ -37,6 +38,13 @@
                     Command="{Binding DeleteCommand}"
                     BackgroundColor="Red"
                     TextColor="White"/>
+        </Grid>
+        <Grid
+            Grid.Row="1"
+            IsVisible="{Binding ShowAddMode}"
+            >
+            <Button Text="儲存" BackgroundColor="LightGreen"
+                    Command="{Binding AddSaveCommand}"/>
         </Grid>
     </Grid>
   
