@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="http://prismlibrary.com"
+             x:Class="xf3031.Views.MainPage"
+             Title="{Binding Title}">
+
+    <Grid>
+        <ListView
+            ItemsSource="{Binding MyTaskItemList}"
+            HasUnevenRows="True"
+            SelectedItem="{Binding MyTaskSelectedItem}"
+            
+            >
+            <ListView.Behaviors>
+                <prism:EventToCommandBehavior
+                    EventName="ItemSelected"
+                    Command="{Binding ItemSelectedCommand}"/>
+            </ListView.Behaviors>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout
+                            Margin="15,5"
+                            >
+                            <Label Text="{Binding MyTaskName}"
+                                   FontSize="22" TextColor="Orange"/>
+                            <Label Text="{Binding MyTaskStatus}"
+                                   FontSize="18" TextColor="Green"/>
+                            <Label Text="{Binding MyTaskDate, StringFormat='{0:yyyy-MM-dd}'}"
+                                   FontSize="16" TextColor="Blue" />
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </Grid>
+</ContentPage>
