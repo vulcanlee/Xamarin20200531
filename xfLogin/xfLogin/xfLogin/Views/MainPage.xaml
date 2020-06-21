@@ -11,7 +11,7 @@
         <Entry Text="{Binding Account}" 
                Placeholder="請輸入登入帳號" PlaceholderColor="LightPink"/>
         <Label Text="密碼"/>
-        <Entry Text="{Binding Account}" IsPassword="True"
+        <Entry Text="{Binding Password}" IsPassword="True"
                Placeholder="請輸入密碼" PlaceholderColor="LightPink"/>
         <Button Text="登入" Command="{Binding LoginCommand}"
                 HorizontalOptions="Center" 
