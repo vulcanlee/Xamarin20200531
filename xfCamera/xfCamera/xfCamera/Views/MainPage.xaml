@@ -6,6 +6,14 @@
 
     <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
         <Button Text="拍照" Command="{Binding TakePictureCommand}"/>
+        <Image Source="camera.png"
+               WidthRequest="80">
+            <Image.GestureRecognizers>
+                <TapGestureRecognizer
+                     NumberOfTapsRequired="2"
+                    Command="{Binding TakePictureCommand}"/>
+            </Image.GestureRecognizers>
+        </Image>
         <Image Source="{Binding MyImageSource}"/>
     </StackLayout>
 
