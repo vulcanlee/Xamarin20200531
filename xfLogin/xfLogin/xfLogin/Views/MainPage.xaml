@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="xfLogin.Views.MainPage"
+             Title="使用者身分驗證">
+
+    <StackLayout HorizontalOptions="Fill" VerticalOptions="CenterAndExpand"
+                 Margin="20">
+        <Label Text="Welcome to Xamarin Forms and Prism!" />
+        <Label Text="帳號"/>
+        <Entry Text="{Binding Account}" 
+               Placeholder="請輸入登入帳號" PlaceholderColor="LightPink"/>
+        <Label Text="密碼"/>
+        <Entry Text="{Binding Account}" IsPassword="True"
+               Placeholder="請輸入密碼" PlaceholderColor="LightPink"/>
+        <Button Text="登入" Command="{Binding LoginCommand}"
+                HorizontalOptions="Center" 
+                BackgroundColor="Green" TextColor="White"
+                WidthRequest="200"/>
+        <Label Text="{Binding Message}" 
+               FontSize="30" TextColor="Red"/>
+    </StackLayout>
+
+</ContentPage>
