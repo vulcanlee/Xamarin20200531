@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XF3022.Views.MainPage"
+             Title="{Binding Title}">
+
+    <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+        <Label Text="Welcome to Xamarin Forms and Prism!" />
+        <Picker ItemsSource="{Binding Picker1Source}"
+                SelectedItem="{Binding Picker1SelectedItem}"/>
+        <Picker ItemsSource="{Binding Picker2Source}"
+                SelectedItem="{Binding Picker2SelectedItem}"/>
+        <Label Text="{Binding Picker1SelectedItem}" FontSize="30"
+               TextColor="Red"/>
+        <Label Text="{Binding Picker2SelectedItem}" FontSize="30"
+               TextColor="Green"/>
+    </StackLayout>
+
+</ContentPage>
