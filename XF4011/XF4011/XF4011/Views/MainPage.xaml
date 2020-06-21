@@ -14,7 +14,8 @@
     <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="Start">
         <Label Text="Welcome to Xamarin Forms and Prism!" />
         <Entry Text="{Binding MyColor}"/>
-        <BoxView Color="{Binding MyColor,Converter={StaticResource IntToColorConverterRes }}"/>
+        <BoxView Color="{Binding MyColor,
+            Converter={StaticResource IntToColorConverterRes }}"/>
     </StackLayout>
 
 </ContentPage>
