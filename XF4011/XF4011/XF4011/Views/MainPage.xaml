@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:converter="clr-namespace:XF4011"
+             x:Class="XF4011.Views.MainPage"
+             Title="{Binding Title}">
+    
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <converter:IntToColorConverter x:Key="IntToColorConverterRes"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="Start">
+        <Label Text="Welcome to Xamarin Forms and Prism!" />
+        <Entry Text="{Binding MyColor}"/>
+        <BoxView Color="{Binding MyColor,Converter={StaticResource IntToColorConverterRes }}"/>
+    </StackLayout>
+
+</ContentPage>
